@@ -123,3 +123,8 @@ margin-top: 2rem;
 .commentForm button[type="submit"]:not(:disabled):hover {
   background: var(--green-300);
 }
+
+.commentList{
+    margin-top: 2rem;
+
+}
