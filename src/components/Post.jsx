@@ -6,7 +6,9 @@ import { Avatar } from "./Avatar";
 
 
 export function Post({ author, publishedAt }) {
-const publishedDateFormatted = format()
+const publishedDateFormatted = format(publishedAt, "d de LLL ás HH:mmh")
+
+
   return (
     <article className={styles.post}>
       <header>
