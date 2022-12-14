@@ -1,47 +1,31 @@
+import { format } from 'date-fns';
+
 import styles from "./Post.module.css";
 import { Comentario } from "./Comment";
 import { Avatar } from "./Avatar";
 
-console.log(styles);
 
-export function Post() {
+export function Post({ author, publishedAt }) {
+const publishedDateFormatted = format()
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src="https://github.com/teussharke.png" />
+          <Avatar src={author.avatarUrl} />
 
           <div className={styles.authorInfo}>
-            <strong>Mateus Oliveira</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
         <time title="11 de maio as 08:13h" dateTime="2022-05-02">
-          Publicado há 1h
+          {publishedDateFormatted}
         </time>
       </header>
 
       <div className={styles.content}>
-        <p> Fala galeraa 👋</p>
-
-        <p>
-          {" "}
-          Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
-          no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
-        </p>
-
-        <p>
-          {""} <a href="">jane.design/doctorcare </a>{" "}
-        </p>
-
-        <p>
-          <a href="">#rocketseat </a>
-          {""}
-          <a href="">#novoprojeto</a>
-          {""}
-          <a href="">#nlw</a>
-        </p>
+       
       </div>
 
       <form className={styles.commentForm}>
