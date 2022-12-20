@@ -5,7 +5,7 @@ import { Comentario } from "./Comment";
 import { Avatar } from "./Avatar";
 
 
-export function Post({ author, publishedAt }) {
+export function Post({ author, publishedAt, }) {
 const publishedDateFormatted = format(publishedAt, "d de LLL ás HH:mmh")
 
 
