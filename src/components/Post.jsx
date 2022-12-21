@@ -6,7 +6,7 @@ import { Avatar } from "./Avatar";
 
 
 export function Post({ author, publishedAt, }) {
-const publishedDateFormatted = format(publishedAt, "d de LLL ás HH:mmh")
+const publishedDateFormatted = format(publishedAt, "d de LLL ás HH:mm'h'")
 
 
   return (
