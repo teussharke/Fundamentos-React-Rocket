@@ -5,16 +5,12 @@ import { useState } from "react";
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 
-
 import styles from "./Post.module.css";
 
-
-
 export function Post({ author, publishedAt, content }) {
-  const comments = useState([
-    1,
-    2,
-  ])
+  const [comments, setComments] = useState([
+    'Pot muito bacana, hein!'
+  ]);
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -32,7 +28,7 @@ export function Post({ author, publishedAt, content }) {
   function handleCreateNewComment() {
     event.preventDefault();
 
-    comments.push(3);
+    setComments([...comments, comments.length + 1]);
   }
 
   return (
@@ -59,8 +55,12 @@ export function Post({ author, publishedAt, content }) {
         {content.map((line) => {
           if (line.type === "paragraph") {
             return <p>{line.content}</p>;
-          } else if (line.type === 'link') {
-            return <p><a href="#">{line.content}</a></p>;
+          } else if (line.type === "link") {
+            return (
+              <p>
+                <a href="#">{line.content}</a>
+              </p>
+            );
           }
         })}
       </div>
@@ -76,8 +76,8 @@ export function Post({ author, publishedAt, content }) {
       </form>
 
       <div className={styles.commentList}>
-        {comments.map(comment => {
-          return <Comment />
+        {comments.map((comment) => {
+          return <Comment content={comment} />;
         })}
       </div>
     </article>
