@@ -2,7 +2,7 @@ import { ThumbsUp, Trash } from "phosphor-react";
 import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
 
-export function Comentario() {
+export function Comment() {
   return (
     <div className={styles.comment}>
       <Avatar src="https://github.com/mateuslouback.png" alt="" />
