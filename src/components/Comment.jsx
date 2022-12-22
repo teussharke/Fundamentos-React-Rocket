@@ -5,13 +5,13 @@ import { Avatar } from "./Avatar";
 export function Comment({ content }) {
   return (
     <div className={styles.comment}>
-      <Avatar src="https://github.com/mateuslouback.png" alt="" />
+      <Avatar src="https://github.com/MatheusMessias-jf.png" alt="" />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Mateus Louback</strong>
+              <strong>Mateus Messias</strong>
               <time title="11 de maio as 08:13h" dateTime="2022-05-02">
                 Cerca de 1h atrás
               </time>

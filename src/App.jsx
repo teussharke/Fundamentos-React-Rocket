@@ -32,9 +32,9 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/mateuslouback.png",
-      name: "Mateus Louback",
-      role: "UI/UX Designer",
+      avatarUrl: "https://github.com/trajano177.png",
+      name: "Mateus Trajano",
+      role: "Developer Frontend", 
     },
     content: [
       { type: "paragraph", content: "Fala galeraa 👋" },
