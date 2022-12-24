@@ -8,11 +8,9 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([
-    'Pot muito bacana, hein!'
-  ]);
+  const [comments, setComments] = useState(["Pot muito bacana, hein!"]);
 
-  const [newCommentText, setNewCommentText] = useState('')
+  const [newCommentText, setNewCommentText] = useState("");
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -31,12 +29,15 @@ export function Post({ author, publishedAt, content }) {
     event.preventDefault();
 
     setComments([...comments, newCommentText]);
-    setNewCommentText('');
-
+    setNewCommentText("");
   }
 
   function handleNewCommentChange() {
-    setNewCommentText(event.target.value)
+    setNewCommentText(event.target.value);
+  }
+
+  function deleteComment(comment) {
+    setComments();
   }
 
   return (
@@ -76,11 +77,11 @@ export function Post({ author, publishedAt, content }) {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea 
-        name="comment"
-        placeholder="Deixe um comentário" 
-        value={newCommentText}
-        onChange={handleNewCommentChange}
+        <textarea
+          name="comment"
+          placeholder="Deixe um comentário"
+          value={newCommentText}
+          onChange={handleNewCommentChange}
         />
 
         <footer>
@@ -90,7 +91,13 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
